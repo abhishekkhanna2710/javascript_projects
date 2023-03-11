@@ -22,3 +22,28 @@ function printSumAfterDelay(a, b) {
 }
 
 printSumAfterDelay(5, 10);
+
+
+// clousers
+
+
+for (var i = 0; i < 3; i++) {
+    setTimeout(() => {
+        console.log(i)
+    }, 5000)
+}
+
+// for (var i = 0; i < 3; i++) {
+//     setTimeout(() => {
+//         return () => console.log(i)
+//     }, 5000)
+// }
+for (var i = 0; i < 3; i++) {
+    setTimeout(((i) => {
+        return function () {
+            console.log(i)
+        }
+    })(i), 5000)
+}
+
+// immeditaely invoked function expressions
