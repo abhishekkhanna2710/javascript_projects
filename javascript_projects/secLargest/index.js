@@ -10,3 +10,15 @@ function secondLargest(arr) {
 const secondElement = secondLargest(arr);
 
 console.log(secondElement)
+
+
+// Print sum of numbers after 5 secons
+
+function printSumAfterDelay(a, b) {
+    setTimeout(() => {
+        const sum = a + b;
+        console.log(`${a} and ${b} sum is ${sum}`)
+    }, 5000)
+}
+
+printSumAfterDelay(5, 10);
