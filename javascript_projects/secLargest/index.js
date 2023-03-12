@@ -38,12 +38,20 @@ for (var i = 0; i < 3; i++) {
 //         return () => console.log(i)
 //     }, 5000)
 // }
-for (var i = 0; i < 3; i++) {
+// for (var i = 0; i < 3; i++) {
+//     setTimeout(((i) => {
+//         return function () {
+//             console.log(i)
+//         }
+//     })(i), 5000)
+// }
+
+
+for (let i = 0; i< 4; i++) {
     setTimeout(((i) => {
         return function () {
             console.log(i)
         }
-    })(i), 5000)
+    })(i), 4000)
 }
-
 // immeditaely invoked function expressions
