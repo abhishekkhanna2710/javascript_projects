@@ -102,3 +102,57 @@ c.add(10);
 
 console.log(c.retrieve())
 
+// Differnce between closure and scope
+/*  
+Closure : Whenever we create a inner function inside an outer function, the inner function can able to access any variable and parameter of the outer function .The inner function is called the closures
+
+Whereas Scope on the other side that which variable we have to excess
+
+There are two types of scope: Local and Global scope
+
+whereas in case of closure we have 3 scope:
+
+Local scope
+Global scope
+Outer scope
+
+
+*******************quest 7: Make this run only once****************
+let check;
+
+function result() {
+    check = "Good Marks"
+    console.log("Piyush Get " + check)
+    
+}
+result();
+result();
+result();
+result();
+
+so we have to call this function only once how can i do so
+
+*/
+
+let check;
+
+function result() {
+    check = "Good Marks";
+    var counts = 0;
+    return function () {
+        if (counts > 0) {
+            console.log("Piyush get the result ....")
+        }
+        else {
+            console.log("Piyush Get " + check)
+            counts++;
+        }
+    }
+}
+let run = result();
+
+run();
+
+run();
+run();
+run();
