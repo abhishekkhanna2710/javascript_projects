@@ -63,11 +63,42 @@ console.timeEnd("50")
 
 //Block scope and set timeout
 
-for (var i = 0; i < 3; i++) {
-    setTimeout(((i) => {
-        return function () {
-            console.log(i)
-        }
-    })(i), 1000)
+function output() {
+
+    for (var i = 0; i < 3; i++) {
+        setTimeout(((i) => {
+            return function () {
+                console.log(i)
+            }
+        })(i), i * 1000)
+    }
 }
+
+output();
+
+// How would you use a closure to create a private counter
+
+function counter() {
+    var count = 0;
+
+    function add(inc) {
+        count += inc;
+    }
+
+    function retrieve() {
+        return "Counter = " + count;
+    }
+
+    return {
+        add,
+        retrieve
+    }
+}
+
+const c = counter();
+
+c.add(5);
+c.add(10);
+
+console.log(c.retrieve())
 
