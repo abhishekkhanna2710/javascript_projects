@@ -191,3 +191,16 @@ console.log(toggle())
 console.log(toggle())
 
 console.log("________________________________________________")
+
+
+// closures
+
+function outer() {
+    var a = 10;
+    return function (b) {
+        return a + b;
+    }
+}
+
+var res = outer();
+console.log(res(6))
