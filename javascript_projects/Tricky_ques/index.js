@@ -87,3 +87,31 @@ sum(1, 2, 3)
 
 
 // ***** Event Bubbling and Event Capturing
+console.log("____________________________________")
+
+const increment = x => {
+    const result = x + 1;
+    return Promise.resolve(result);
+};
+
+increment(2)
+    .then(result => {
+        console.log(result);
+        return result + 1;
+    })
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+
+
+
+const multiply = (x, y) => x * y;
+const curriedMultiply = x => y => multiply(x, y);
+const double = curriedMultiply(2);
+console.log(double(4));
+
+
+
+const add = x => y => x + y;
+const add5 = add(5);
+console.log(add5(3));
