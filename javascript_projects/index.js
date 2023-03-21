@@ -86,15 +86,28 @@ console.log(names)
 
 var isAuth;
 
-console.log(isAuth)
+console.log(isAuth + " hi")
 
 
 var str = 'Abhishek'
 
 var { length } = str;
 
+console.log([1] === [1])
 
-// *********************************************
+
+
+function cont(x) {
+    var y = x * 10;
+    function val(z) {
+        console.log(x, y, z)
+    }
+    val(y * 5);
+}
+
+cont(3);
+
+// // *********************************************
 function getname() {
     var status = false;
 
@@ -106,3 +119,19 @@ function getname() {
 }
 
 getname();
+
+var name = "Ajay"
+
+function printDetails() {
+    console.log(this.name)
+}
+
+var persons = {
+    name: 'Haren',
+    company: 'masai',
+    print: printDetails()
+}
+
+persons.print();
+
+// Type error : Answer
