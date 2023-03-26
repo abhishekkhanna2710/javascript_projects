@@ -115,3 +115,22 @@ console.log(double(4));
 const add = x => y => x + y;
 const add5 = add(5);
 console.log(add5(3));
+
+console.log("***************")
+
+const prod = (x) => {
+    x = x + 5;
+    return inner => {
+        x * inner;
+    }
+}
+
+
+prod(5)(10);
+console.log("***************")
+
+
+
+// const isAuth;
+
+// console.log(isAuth)
