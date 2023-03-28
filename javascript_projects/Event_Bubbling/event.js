@@ -1,5 +1,6 @@
 var div = document.querySelector("div");
 var button = document.querySelector("button");
+var anchor = document.querySelector("a");
 
 div.addEventListener("click", () => {
     console.log("div")
@@ -9,6 +10,12 @@ div.addEventListener("click", () => {
 // button.addEventListener("click", () => {
 //     console.log("button")
 // })
+
+anchor.addEventListener("click", (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    console.log("anchor")
+})
 
 //**********Stop prpogation code***********
 
