@@ -27,3 +27,17 @@ console.log(1 + +"2" + "2") // 32 after put + it convert string into integer
 console.log(1 + -"1" + +"2") // 2
 console.log("A" - "B" + "2")// NAN2 Because we cannot minus string from string 
 console.log("A" - "B" + 2)// NAN
+
+
+// 4th question
+
+var g= 0;
+function c()
+{
+    g= 10;
+    return;
+    // var g=function(){}
+}
+
+c();
+console.log(g)// 0 then it will print 10  Hoisting concept
