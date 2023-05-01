@@ -41,3 +41,11 @@ function c()
 
 c();
 console.log(g)// 0 then it will print 10  Hoisting concept
+
+
+// question 5
+
+console.log({}==={})// false// it compare memory location
+var d= {};
+var e = d;
+console.log(e==d)// true becoz it shares same memory location
