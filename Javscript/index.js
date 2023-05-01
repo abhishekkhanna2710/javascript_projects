@@ -31,10 +31,9 @@ console.log("A" - "B" + 2)// NAN
 
 // 4th question
 
-var g= 0;
-function c()
-{
-    g= 10;
+var g = 0;
+function c() {
+    g = 10;
     return;
     // var g=function(){}
 }
@@ -45,7 +44,24 @@ console.log(g)// 0 then it will print 10  Hoisting concept
 
 // question 5
 
-console.log({}==={})// false// it compare memory location
-var d= {};
+console.log({} === {})// false// it compare memory location
+var d = {};
 var e = d;
-console.log(e==d)// true becoz it shares same memory location
+console.log(e == d)// true becoz it shares same memory location
+
+
+// Question 6
+
+function test() {
+    function foo() {
+        return 100;
+    }
+    return foo();
+
+    function foo() {
+        return 10
+    }
+}
+
+console.log(test());// 10 foo overwrite another function hoisting use
+
