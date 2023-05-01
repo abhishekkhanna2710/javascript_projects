@@ -12,11 +12,18 @@ console.log(typeof (b))// number
 
 // 2nd questions 
 
-function foo(){
-    return
-     {
-        name:"Abhishek"
+function foo() {
+    return// becoz when you consider it will show that return statemnt is half
+    {
+        name: "Abhishek"
     }
 }
+console.log(foo()) // undefined
 
-console.log(foo())
+// 3rd questions
+
+console.log(1 + "2" + "2") // 122
+console.log(1 + +"2" + "2") // 32 after put + it convert string into integer
+console.log(1 + -"1" + +"2") // 2
+console.log("A" - "B" + "2")// NAN2 Because we cannot minus string from string 
+console.log("A" - "B" + 2)// NAN
