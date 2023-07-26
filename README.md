@@ -158,3 +158,62 @@ inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
 Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for comma (separated list) and Apply is for Array.
 
 Whereas Bind creates a new function that will have this set to the first parameter passed to bind().
+
+What is the purpose of the array splice method
+The splice() method is used either adds/removes items to/from an array, and then returns the removed item. The first argument specifies the array position for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.
+
+Some of the examples of this method are,
+
+let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
+let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
+
+let arrayIntegers1 = arrayIntegersOriginal1.splice(0, 2); // returns [1, 2]; original array: [3, 4, 5]
+let arrayIntegers2 = arrayIntegersOriginal2.splice(3); // returns [4, 5]; original array: [1, 2, 3]
+let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, "a", "b", "c"); //returns [4]; original array: [1, 2, 3, "a", "b", "c", 5]
+Note: Splice method modifies the original array and returns the deleted array.
+
+⬆ Back to Top
+
+What is the difference between slice and splice
+Some of the major difference in a tabular form
+
+Slice Splice
+Doesn't modify the original array(immutable) Modifies the original array(mutable)
+Returns the subset of original array Returns the deleted elements as array
+Used to pick the elements from array Used to insert or delete elements to/from array
+⬆ Back to Top
+
+How do you compare Object and Map
+Objects are similar to Maps in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Due to this reason, Objects have been used as Maps historically. But there are important differences that make using a Map preferable in certain cases.
+
+The keys of an Object are Strings and Symbols, whereas they can be any value for a Map, including functions, objects, and any primitive.
+The keys in Map are ordered while keys added to Object are not. Thus, when iterating over it, a Map object returns keys in order of insertion.
+You can get the size of a Map easily with the size property, while the number of properties in an Object must be determined manually.
+A Map is an iterable and can thus be directly iterated, whereas iterating over an Object requires obtaining its keys in some fashion and iterating over them.
+An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 this can be bypassed by using map = Object.create(null), but this is seldom done.
+A Map may perform better in scenarios involving frequent addition and removal of key pairs.
+⬆ Back to Top
+
+What is the difference between == and === operators
+JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
+
+Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
+Two numbers are strictly equal when they are numerically equal. i.e, Having the same number value. There are two special cases in this,
+NaN is not equal to anything, including NaN.
+Positive and negative zeros are equal to one another.
+Two Boolean operands are strictly equal if both are true or both are false.
+Two objects are strictly equal if they refer to the same Object.
+Null and Undefined types are not equal with ===, but equal with ==. i.e, null===undefined --> false but null==undefined --> true
+Some of the example which covers the above cases,
+
+0 == false // true
+0 === false // false
+1 == "1" // true
+1 === "1" // false
+null == undefined // true
+null === undefined // false
+'0' == false // true
+'0' === false // false
+[]==[] or []===[] //false, refer different objects in memory
+{}=={} or {}==={} //false, refer different objects in memory
