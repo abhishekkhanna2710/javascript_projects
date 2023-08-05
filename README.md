@@ -382,3 +382,10 @@ Maximum data size 4KB 5 MB 5MB
 
 What is the main difference between localStorage and sessionStorage
 LocalStorage is the same as SessionStorage but it persists the data even when the browser is closed and reopened(i.e it has no expiration time) whereas in sessionStorage data gets cleared when the page session ends.
+
+What is the use of setTimeout
+The setTimeout() method is used to call a function or evaluate an expression after a specified number of milliseconds. For example, let's log a message after 2 seconds using setTimeout method,
+
+setTimeout(function () {
+console.log("Good morning");
+}, 2000);
