@@ -1,22 +1,21 @@
 //Tricky js questions
 
 (function () {
-      // b = 3 comes under global scope
-      // var a = b // block scope
-      var a = b = 3;
+// b = 3 comes under global scope
+// var a = b // block scope
+var a = b = 3;
 })();
 
 console.log(typeof (a))// undefined
 console.log(typeof (b))// number
 
-
 // 2nd questions
 
 function foo() {
-      return// becoz when you consider it will show that return statemnt is half
-      {
-            name: "Abhishek"
-      }
+return// becoz when you consider it will show that return statemnt is half
+{
+name: "Abhishek"
+}
 }
 console.log(foo()) // undefined
 
@@ -28,19 +27,17 @@ console.log(1 + -"1" + +"2") // 2
 console.log("A" - "B" + "2")// NAN2 Because we cannot minus string from string
 console.log("A" - "B" + 2)// NAN
 
-
 // 4th question
 
 var g = 0;
 function c() {
-      g = 10;
-      return;
-      // var g=function(){}
+g = 10;
+return;
+// var g=function(){}
 }
 
 c();
-console.log(g)// 0 then it will print 10  Hoisting concept
-
+console.log(g)// 0 then it will print 10 Hoisting concept
 
 // question 5
 
@@ -49,18 +46,18 @@ var d = {};
 var e = d;
 console.log(e == d)// true becoz it shares same memory location
 
-
 // Question 6
 
 function test() {
-      function foo() {
-            return 100;
-      }
-      return foo();
+function foo() {
+return 100;
+}
+return foo();
 
       function foo() {
             return 10
       }
+
 }
 
 console.log(test());// 10 foo overwrite another function hoisting use
@@ -84,12 +81,12 @@ Object literal syntax:
 The object literal syntax(or object initializer), is a comma - separated set of name - value pairs wrapped in curly braces.
 
 var object = {
-      name: "Sudheer",
-      age: 34
+name: "Sudheer",
+age: 34
 };
 
 Object literal property values can be of any data type, including array, function, and nested object.
-      Note: This is an easiest way to create an object
+Note: This is an easiest way to create an object
 
 Function constructor:
 
@@ -99,12 +96,14 @@ Create any function and apply the new operator to create object instances,
             this.name = name;
             this.age = 21;
       }
+
 var object = new Person("Sudheer");
 Function constructor with prototype:
 
 This is similar to function constructor but it uses prototype for their properties and methods,
 
       function Person() { }
+
 Person.prototype.name = "Sudheer";
 var object = new Person();
 This is equivalent to an instance created with an object create method with a function prototype and then call that function with an instance and parameters as arguments.
@@ -122,14 +121,15 @@ var result = func.call(newInstance, x, y, z),
 
       // If the result is a non-null object then use it otherwise just use the new instance.
       console.log(result && typeof result === 'object' ? result : newInstance);
+
 ES6 Class syntax:
 
 ES6 introduces class feature to create the objects
 
 class Person {
-      constructor(name) {
-            this.name = name;
-      }
+constructor(name) {
+this.name = name;
+}
 }
 
 var object = new Person("Sudheer");
@@ -138,7 +138,7 @@ Singleton pattern:
 A Singleton is an object which can only be instantiated one time.Repeated calls to its constructor return the same instance and this way one can ensure that they don't accidentally create multiple instances.
 
 var object = new (function () {
-      this.name = "Sudheer";
+this.name = "Sudheer";
 })();
 
 What is the purpose of the array slice method
@@ -147,6 +147,7 @@ The slice() method returns the selected elements in an array as a new array obje
 Some of the examples of this method are,
 
       let arrayIntegers = [1, 2, 3, 4, 5];
+
 let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
 let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
 let arrayIntegers3 = arrayIntegers.slice(4); //returns [5]
@@ -160,6 +161,7 @@ The splice() method is used either adds / removes items to / from an array, and 
 Some of the examples of this method are,
 
       let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+
 let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
 let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
 
@@ -187,9 +189,9 @@ var employee1 = { firstName: "John", lastName: "Rodson" };
 var employee2 = { firstName: "Jimmy", lastName: "Baily" };
 
 function invite(greeting1, greeting2) {
-      console.log(
-            greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-      );
+console.log(
+greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
+);
 }
 
 invite.call(employee1, "Hello", "How are you?"); // Hello John Rodson, How are you?
@@ -200,9 +202,9 @@ var employee1 = { firstName: "John", lastName: "Rodson" };
 var employee2 = { firstName: "Jimmy", lastName: "Baily" };
 
 function invite(greeting1, greeting2) {
-      console.log(
-            greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-      );
+console.log(
+greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
+);
 }
 
 invite.apply(employee1, ["Hello", "How are you?"]); // Hello John Rodson, How are you?
@@ -213,9 +215,9 @@ var employee1 = { firstName: "John", lastName: "Rodson" };
 var employee2 = { firstName: "Jimmy", lastName: "Baily" };
 
 function invite(greeting1, greeting2) {
-      console.log(
-            greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-      );
+console.log(
+greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
+);
 }
 
 var inviteEmployee1 = invite.bind(employee1);
@@ -232,6 +234,7 @@ The splice() method is used either adds / removes items to / from an array, and 
 Some of the examples of this method are,
 
       let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+
 let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
 let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
 
@@ -267,7 +270,7 @@ JavaScript provides both strict(===, !==) and type - converting(==, !=) equality
 
 Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
 Two numbers are strictly equal when they are numerically equal.i.e, Having the same number value.There are two special cases in this,
-      NaN is not equal to anything, including NaN.
+NaN is not equal to anything, including NaN.
 Positive and negative zeros are equal to one another.
 Two Boolean operands are strictly equal if both are true or both are false.
 Two objects are strictly equal if they refer to the same Object.
@@ -275,6 +278,7 @@ Null and Undefined types are not equal with ===, but equal with ==.i.e, null ===
 Some of the example which covers the above cases,
 
       0 == false // true
+
 0 === false // false
 1 == "1" // true
 1 === "1" // false
@@ -286,7 +290,7 @@ null === undefined // false
 { }== {} or { }=== {} //false, refer different objects in memory
 
 What is the difference between let and var
-      You can list out the differences in a tabular format
+You can list out the differences in a tabular format
 
 var let
 It is been available from the beginning of JavaScript Introduced as part of ES6
@@ -295,14 +299,14 @@ Variables will be hoisted Hoisted but not initialized
 Let's take an example to see the difference,
 
 function userDetails(username) {
-      if (username) {
-            console.log(salary); // undefined due to hoisting
-            console.log(age); // ReferenceError: Cannot access 'age' before initialization
-            let age = 30;
-            var salary = 10000;
-      }
-      console.log(salary); //10000 (accessible due to function scope)
-      console.log(age); //error: age is not defined(due to block scope)
+if (username) {
+console.log(salary); // undefined due to hoisting
+console.log(age); // ReferenceError: Cannot access 'age' before initialization
+let age = 30;
+var salary = 10000;
+}
+console.log(salary); //10000 (accessible due to function scope)
+console.log(age); //error: age is not defined(due to block scope)
 }
 userDetails("John");
 ⬆ Back to Top
@@ -316,27 +320,29 @@ How do you redeclare variables in switch block without an error
 If you try to redeclare variables in a switch block then it will cause errors because there is only one block.For example, the below code block throws a syntax error as below,
 
       let counter = 1;
+
 switch (x) {
-      case 0:
-            let name;
-            break;
+case 0:
+let name;
+break;
 
       case 1:
             let name; // SyntaxError for redeclaration.
             break;
+
 }
 To avoid this error, you can create a nested block inside a case clause and create a new block scoped lexical environment.
 
 let counter = 1;
 switch (x) {
-      case 0: {
-            let name;
-            break;
-      }
-      case 1: {
-            let name; // No SyntaxError for redeclaration.
-            break;
-      }
+case 0: {
+let name;
+break;
+}
+case 1: {
+let name; // No SyntaxError for redeclaration.
+break;
+}
 }
 ⬆ Back to Top
 
@@ -346,10 +352,10 @@ The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a 
       Let's see this behavior with an example,
 
 function somemethod() {
-      console.log(counter1); // undefined
-      console.log(counter2); // ReferenceError
-      var counter1 = 1;
-      let counter2 = 2;
+console.log(counter1); // undefined
+console.log(counter2); // ReferenceError
+var counter1 = 1;
+let counter2 = 2;
 }
 ⬆ Back to Top
 
@@ -359,12 +365,14 @@ IIFE(Immediately Invoked Function Expression) is a JavaScript function that runs
       (function () {
             // logic here
       })();
+
 The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world.i.e, If you try to access variables with IIFE then it throws an error as below,
 
       (function () {
             var message = "IIFE";
             console.log(message);
       })();
+
 console.log(message); //Error: message is not defined
 
 What is scope in javascript
@@ -408,6 +416,7 @@ What is a Cookie
 A cookie is a piece of data that is stored on your computer to be accessed by your browser.Cookies are saved as key / value pairs.For example, you can create a cookie named username as below,
 
       document.cookie = "username=John";
+
 Screenshot
 
 ⬆ Back to Top
@@ -416,6 +425,7 @@ Why do you need a Cookie
 Cookies are used to remember information about the user profile(such as username).It basically involves two steps,
 
       When a user visits a web page, the user profile can be stored in a cookie.
+
 Next time the user visits the page, the cookie remembers the user profile.
 ⬆ Back to Top
 
@@ -424,15 +434,16 @@ There are few below options available for a cookie,
 
       By default, the cookie is deleted when the browser is closed but you can change this behavior by setting expiry date(in UTC time).
             document.cookie = "username=John; expires=Sat, 8 Jun 2019 12:00:00 UTC";
+
 By default, the cookie belongs to a current page.But you can tell the browser what path the cookie belongs to using a path parameter.
-      document.cookie = "username=John; path=/services";
+document.cookie = "username=John; path=/services";
 ⬆ Back to Top
 
 How do you delete a cookie
 You can delete a cookie by setting the expiry date as a passed date.You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
 
 document.cookie =
-      "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
+"username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
 Note: You should define the cookie path option to ensure that you delete the right cookie.Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
 
 ⬆ Back to Top
@@ -441,6 +452,7 @@ What are the differences between cookie, local storage and session storage
 Below are some of the differences between cookie, local storage and session storage,
 
       Feature Cookie Local storage Session storage
+
 Accessed on client or server side Both server - side & client - side client - side only client - side only
 Lifetime As configured using Expires option until deleted until tab is closed
 SSL support Supported Not supported Not supported
@@ -450,27 +462,33 @@ Maximum data size 4KB 5 MB 5MB
 What is the main difference between localStorage and sessionStorage
 LocalStorage is the same as SessionStorage but it persists the data even when the browser is closed and reopened(i.e it has no expiration time) whereas in sessionStorage data gets cleared when the page session ends.
 
-
-
-
-
 What is a promise
 A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error).It will be in one of the 3 possible states: fulfilled, rejected, or pending.
 
 The syntax of Promise creation looks like below,
 
 const promise = new Promise(function (resolve, reject) {
-            // promise description
-      });
+// promise description
+});
 The usage of a promise would be as below,
 
 const promise = new Promise(
-            (resolve) => {
-                  setTimeout(() => {
-                        resolve("I'm a Promise!");
-                  }, 5000);
-            },
-            (reject) => { }
-      );
+(resolve) => {
+setTimeout(() => {
+resolve("I'm a Promise!");
+}, 5000);
+},
+(reject) => { }
+);
 
 promise.then((value) => console.log(value));
+
+What is the difference between null and undefined
+Below are the main differences between null and undefined,
+
+Null Undefined
+It is an assignment value which indicates that variable points to no object. It is not an assignment value where a variable has been declared but has not yet been assigned a value.
+Type of null is object Type of undefined is undefined
+The null value is a primitive value that represents the null, empty, or non-existent reference. The undefined value is a primitive value used when a variable has not been assigned a value.
+Indicates the absence of a value for a variable Indicates absence of variable itself
+Converted to zero (0) while performing primitive operations Converted to NaN while performing primitive operations
