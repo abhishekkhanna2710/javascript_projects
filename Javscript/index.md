@@ -492,3 +492,6 @@ Type of null is object Type of undefined is undefined
 The null value is a primitive value that represents the null, empty, or non-existent reference. The undefined value is a primitive value used when a variable has not been assigned a value.
 Indicates the absence of a value for a variable Indicates absence of variable itself
 Converted to zero (0) while performing primitive operations Converted to NaN while performing primitive operations
+
+Q- What is event bubbling
+Ans- Event bubbling is a type of event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors (parents) of the target element in the same nesting hierarchy till it reaches the outermost DOM element.
