@@ -498,3 +498,25 @@ Ans- Event bubbling is a type of event propagation where the event first trigger
 
 Q- What is the difference between native, host and user objects
 Ans- Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification. For example, String, Math, RegExp, Object, Function etc core objects defined in the ECMAScript spec. Host objects are objects provided by the browser or runtime environment (Node). For example, window, XmlHttpRequest, DOM nodes etc are considered as host objects. User objects are objects defined in the javascript code. For example, User objects created for profile information.
+
+Q- What are the tools or techniques used for debugging JavaScript code
+Ans- You can use below tools or techniques for debugging javascript
+
+Chrome Devtools
+debugger statement
+Good old console.log statement
+⬆ Back to Top
+
+Que - What are the pros and cons of promises over callbacks
+Ans- Below are the list of pros and cons of promises over callbacks,
+
+Pros:
+
+It avoids callback hell which is unreadable
+Easy to write sequential asynchronous code with .then()
+Easy to write parallel asynchronous code with Promise.all()
+Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)
+Cons:
+
+It makes little complex code
+You need to load a polyfill if ES6 is not supported
