@@ -627,3 +627,13 @@ In vanilla javascript, you can redirect to a new page using the location propert
 function redirect() {
   window.location.href = "newPage.html";
 }
+
+
+(function () {
+// b = 3 comes under global scope
+// var a = b // block scope
+var a = b = 3;
+})();
+
+console.log(typeof (a))// undefined
+console.log(typeof (b))// number
