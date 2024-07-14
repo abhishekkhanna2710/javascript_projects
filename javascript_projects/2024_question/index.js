@@ -58,3 +58,35 @@ for(i= 0; i<n;i++){
 
 console.log(result)
 
+// 3. Find Missing Number
+// Problem: Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is    missing from the array. For example, if the input array is [3, 0, 1], 
+// the output should be 2.
+
+
+let input = [3, 0, 1, 2,5]
+
+// output = 2
+
+// 0 1,3,
+//   i j
+
+var length = input.length;
+
+input.sort();
+
+var j = 1;
+var i = 0;
+
+while (i<n-1){
+    if(input[j] - input[i] == 1){
+        j++;
+        i++
+    }
+    else{
+        console.log(j)
+        break;
+    }
+}
+
+  
+
