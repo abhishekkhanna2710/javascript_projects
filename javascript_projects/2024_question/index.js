@@ -88,5 +88,27 @@ while (i<n-1){
     }
 }
 
+// 4. Move Zeroes
+// Problem: Write a function to move all zeroes in an array to the end while maintaining the relative order of the other elements. For example, if the input array is [0, 1, 0, 3, 12], 
+// the output should be [1, 3, 12, 0, 0].
+
+let check = [0, 1, 0, 3, 12];
+
+let answer = [];
+
+
+for(var i = 0; i< check.length;i++){
+    if(check[i]!==0){
+        answer.push(check[i]);
+    }
   
+}
+
+let answerZeros = check.length - answer.length
+
+for(var i =0; i<answerZeros; i++){
+    answer.push(0);
+}
+
+console.log(answer)
 
