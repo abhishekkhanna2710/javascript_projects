@@ -112,3 +112,29 @@ for(var i =0; i<answerZeros; i++){
 
 console.log(answer)
 
+
+// 5  Move zeroes and ones
+
+// input = [0,1,1,1,0,0,1,0,1,0]
+// output = [0,0,0,0,0,1,1,1,1]
+
+
+var valZeroes = [0,1,1,1,0,0,1,0,1,0];
+
+var checkResult = [];
+
+for(var i =0; i< valZeroes.length;i++){
+    if(valZeroes[i] == 0){
+        checkResult.push(valZeroes[i]);
+    }
+}
+
+let FillOnes = valZeroes.length - checkResult.length;
+
+
+for(var i = 0; i< FillOnes; i++ ){
+    checkResult.push(1);
+}
+
+
+console.log(checkResult)
