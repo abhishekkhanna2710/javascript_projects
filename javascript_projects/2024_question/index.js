@@ -160,3 +160,101 @@ for (let i = 0; i < numbers.length - 2; i++) {
 
 console.log(max); // Output: 24
 
+// 7. Merge Sorted Arrays
+// Problem: Write a function to merge two sorted arrays into one sorted array. For example, if the input arrays are [1, 3, 5] and [2, 4, 6],
+//  the output should be [1, 2, 3, 4, 5, 6].
+
+const arrt1 = [1, 3, 5];
+const arrt2 = [2, 4, 6]
+
+const mergedArray = [];
+
+var i = 0, j = 0;
+
+while (i < arrt1.length && j < arrt2.length) {
+    if (arrt1[i] < arrt2[j]) {
+        mergedArray.push(arrt1[i])
+        i++;
+    }
+    else {
+        mergedArray.push(arrt2[j])
+        j++;
+    }
+}
+
+
+while (i < arrt1.length) {
+    mergedArray.push(arrt1[i])
+    i++;
+}
+while (j < arrt2.length) {
+    mergedArray.push(arrt2[j])
+    j++;
+}
+
+
+console.log(mergedArray)
+
+
+// 9. Find the Majority Element
+// Problem: Write a function to find the majority element in an array. The majority element is the element that appears more than half the time in the array. For example, if the input array is [3, 2, 3], the output should be 3.
+
+
+// 3 2 3
+// i
+//     j
+// count = 1
+function findMajorityElement(elements) {
+    const n = elements.length;
+
+    // Iterate through each element
+    for (let i = 0; i < n; i++) {
+        let count = 0;
+
+        // Count occurrences of elements[i] in the array
+        for (let j = 0; j < n; j++) {
+            if (elements[j] === elements[i]) {
+                count++;
+            }
+        }
+
+        // If elements[i] appears more than half the time, it's the majority element
+        if (count > n / 2) {
+            return elements[i];
+        }
+    }
+
+    // If no majority element found
+    return null;
+}
+
+const elements = [3, 2, 3];
+const majorityElement = findMajorityElement(elements);
+console.log(majorityElement); // Output: 3
+
+//  Remove that nested array
+
+
+const nestedArray = [[[[1, 2]]]];
+
+let results = nestedArray[0]
+results= results[0]
+results= results[0]
+
+
+
+console.log(results)
+
+
+
+// Hello Mam,
+
+// Actually i am looking for the role of MERN Stack developer in your organization
+
+// Experience: 2 years
+
+// Immediate Joiner
+
+// Is there any position available for the same
+
+// Please let me know
